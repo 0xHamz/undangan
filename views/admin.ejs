@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin RSVP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen p-6 bg-gray-100">
+    <h1 class="text-3xl font-bold mb-6 text-center">Daftar RSVP</h1>
+
+    <table class="table-auto w-full bg-white rounded-xl shadow-lg">
+        <thead>
+            <tr class="bg-maroon-900 text-white">
+                <th class="px-4 py-2">#</th>
+                <th class="px-4 py-2">Nama</th>
+                <th class="px-4 py-2">Jumlah Kehadiran</th>
+                <th class="px-4 py-2">Waktu Submit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% rsvps.forEach((rsvp, i)=> { %>
+                <tr class="text-center border-b">
+                    <td class="px-4 py-2">
+                        <%= i+1 %>
+                    </td>
+                    <td class="px-4 py-2">
+                        <%= rsvp.name %>
+                    </td>
+                    <td class="px-4 py-2">
+                        <%= rsvp.jumlah %>
+                    </td>
+                    <td class="px-4 py-2">
+                        <%= new Date(rsvp.created_at).toLocaleString('id-ID') %>
+                    </td>
+                </tr>
+                <% }) %>
+        </tbody>
+    </table>
+</body>
+
+</html>
