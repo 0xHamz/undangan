@@ -19,43 +19,49 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
-
-        
         body {
             margin: 0;
             padding: 0;
             overflow-x: hidden;
             font-family: 'Montserrat', sans-serif;
-                transition: background-image 1s ease-in-out; /* fade halus antar gambar */
-                overflow-x: hidden;
+            transition: background-image 1s ease-in-out;
+            /* fade halus antar gambar */
+            overflow-x: hidden;
             background: url('/images/bg-2.jpg') center/cover no-repeat fixed;
         }
 
         /* Background Parallax */
-.hero-section {
-    background: url('/images/bungafull.png') center/cover no-repeat fixed;
-}
+        .hero-section {
+            background: url('/images/bungafull.png') center/cover no-repeat fixed;
+        }
 
-/* Typography */
-.hero-section h2 {
-    font-family: 'Great Vibes', cursive;
-    font-size: 2.5rem;
-}
+        /* Typography */
+        .hero-section h2 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.5rem;
+        }
 
-.hero-section h1 {
-    font-family: 'Playfair Display SC', serif;
-}
+        .hero-section h1 {
+            font-family: 'Playfair Display SC', serif;
+        }
 
-/* Fade In */
-.fade-in {
-    opacity: 0;
-    animation: fadeInAnim 1.6s ease-out forwards;
-}
+        /* Fade In */
+        .fade-in {
+            opacity: 0;
+            animation: fadeInAnim 1.6s ease-out forwards;
+        }
 
-@keyframes fadeInAnim {
-    from { opacity: 0; transform: translateY(25px); }
-    to   { opacity: 1; transform: translateY(0); }
-}
+        @keyframes fadeInAnim {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
 
         /* Background bunga fixed */
@@ -69,7 +75,7 @@
             left: 0;
             width: 100%;
             height: 120px;
-            overflow: hidden;
+            overflow: visible;
             line-height: 0;
         }
 
@@ -77,60 +83,109 @@
             position: absolute;
             left: 0;
             display: block;
-            width: 100%;
+            width: 200%;
             height: 250px;
         }
 
-        .wave1 { bottom: -5px; }
-        .wave2 { bottom: 30px; }
-        .wave3 { bottom: 40px; }
+        .wave1 {
+            bottom: -5px;
+        }
 
-        @keyframes waveMove1 { 0% { transform: translateX(0); } 100% { transform: translateX(50%); } }
-        @keyframes waveMove2 { 0% { transform: translateX(0); } 100% { transform: translateX(30%); } }
-        @keyframes waveMove3 { 0% { transform: translateX(0); } 100% { transform: translateX(40%); } }
+        .wave2 {
+            bottom: 30px;
+        }
 
-        .wave1 path { animation: waveMove1 15s linear infinite; }
-        .wave2 path { animation: waveMove2 20s linear infinite; }
-        .wave3 path { animation: waveMove3 25s linear infinite; }
+        .wave3 {
+            bottom: 40px;
+        }
+
+        @keyframes waveMove1 {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        @keyframes waveMove2 {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-30%);
+            }
+        }
+
+        @keyframes waveMove3 {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-40%);
+            }
+        }
+
+        .wave1 path {
+            animation: waveMove1 15s linear infinite;
+        }
+
+        .wave2 path {
+            animation: waveMove2 20s linear infinite;
+        }
+
+        .wave3 path {
+            animation: waveMove3 25s linear infinite;
+        }
 
         /* Scroll Down Button */
-.scroll-down {
-    text-align: center;
-    animation: fadeInAnim 2s ease-out forwards;
-}
+        .scroll-down {
+            text-align: center;
+            animation: fadeInAnim 2s ease-out forwards;
+        }
 
-.scroll-text {
-    font-size: 0.9rem;
-    letter-spacing: 2px;
-    opacity: 0.7;
-}
+        .scroll-text {
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            opacity: 0.7;
+        }
 
-.scroll-icon {
-    width: 22px;
-    height: 35px;
-    border: 2px solid #444;
-    border-radius: 12px;
-    margin: 6px auto 0;
-    position: relative;
-}
+        .scroll-icon {
+            width: 22px;
+            height: 35px;
+            border: 2px solid #444;
+            border-radius: 12px;
+            margin: 6px auto 0;
+            position: relative;
+        }
 
-.scroll-icon::after {
-    content: "";
-    width: 6px;
-    height: 6px;
-    background: #444;
-    border-radius: 50%;
-    position: absolute;
-    top: 6px;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: scrollAnim 1.4s infinite;
-}
+        .scroll-icon::after {
+            content: "";
+            width: 6px;
+            height: 6px;
+            background: #444;
+            border-radius: 50%;
+            position: absolute;
+            top: 6px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: scrollAnim 1.4s infinite;
+        }
 
-@keyframes scrollAnim {
-    0% { opacity: 1; transform: translate(-50%, 0); }
-    100% { opacity: 0; transform: translate(-50%, 12px); }
-}
+        @keyframes scrollAnim {
+            0% {
+                opacity: 1;
+                transform: translate(-50%, 0);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translate(-50%, 12px);
+            }
+        }
 
         /* Judul & font */
         h2 {
@@ -157,7 +212,8 @@
 
         @media (max-width: 576px) {
             .card-map {
-                width: 90% !important;   /* mengecil otomatis di HP */
+                width: 90% !important;
+                /* mengecil otomatis di HP */
                 height: 380px !important;
             }
 
@@ -170,12 +226,14 @@
         /* Background gallery full-atas */
         .gallery-section {
             background: url('/images/bg-122.png') top center / cover no-repeat;
-            padding: 0 0 4px 0; /* atas 0 supaya mentok, bawah ada ruang */
+            padding: 0 0 4px 0;
+            /* atas 0 supaya mentok, bawah ada ruang */
         }
 
         /* Judul turun sedikit */
         .gallery-title {
-            padding-top: 120px; /* lebih rapi daripada margin besar */
+            padding-top: 120px;
+            /* lebih rapi daripada margin besar */
         }
 
         /* Animasi gambar */
@@ -183,7 +241,7 @@
             opacity: 0;
             transform: scale(0.1);
             transition: all 0.8s ease-out;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
         }
 
         .gallery-img.show {
@@ -193,14 +251,17 @@
 
         .doa-section {
             background: url('/images/bg-66.png') center/cover no-repeat;
-            padding: 100px 0; /* jarak atas–bawah */
-            color: #000;      /* bisa diubah jadi putih kalau mau */
+            padding: 100px 0;
+            /* jarak atas–bawah */
+            color: #000;
+            /* bisa diubah jadi putih kalau mau */
         }
 
         /* Background RSVP */
         .section-bg.rsvp {
             background: url('/images/bg-14.png') center/cover no-repeat;
-            padding: 120px 0; /* lebih proporsional */
+            padding: 120px 0;
+            /* lebih proporsional */
         }
 
         /* Grid gallery tetap 2 kolom di tablet/desktop */
@@ -210,37 +271,36 @@
                 padding: 0 20px;
             }
         }
+
         #countdown {
-            color: white; /* agar terlihat di atas bg */
-            text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+            color: white;
+            /* agar terlihat di atas bg */
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
             font-family: 'Montserrat', sans-serif;
         }
-        
-/* Gambar Parallax */
-.parallax-img {
-    position: absolute;
-    width: 180px;
-    opacity: 0;
-    transform: scale(0.7);
-    transition: opacity 1s ease, transform 1.2s ease;
-    pointer-events: none;
-    z-index: 2;
-}
 
-#musicBtn {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    z-index: 2000;
-    background: white;
-    padding: 14px 16px;
-    border-radius: 50%;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    font-size: 20px;
-}
+        /* Gambar Parallax */
+        .parallax-img {
+            position: absolute;
+            width: 180px;
+            opacity: 0;
+            transform: scale(0.7);
+            transition: opacity 1s ease, transform 1.2s ease;
+            pointer-events: none;
+            z-index: 2;
+        }
 
-
-
+        #musicBtn {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            z-index: 2000;
+            background: white;
+            padding: 14px 16px;
+            border-radius: 50%;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            font-size: 20px;
+        }
     </style>
 </head>
 
@@ -252,29 +312,29 @@
     <!-- =================== HALAMAN UTAMA =================== -->
     <section class="hero-section min-vh-100 w-100 d-flex flex-column align-items-center 
         text-center text-dark justify-content-center px-3 position-relative fade-in">
-        
+
         <!-- Musik -->
         <audio id="bgm" loop>
             <source src="/music/wedding.mp3" type="audio/mpeg">
         </audio>
-    
-    
+
+
         <h2 class="display-5 mb-3">Wedding Of</h2>
-    
+
         <div class="rounded-circle overflow-hidden shadow border border-white" style="width: 160px; height: 160px;">
             <img src="/images/bg-profil.jpg" class="w-100 h-100 object-fit-cover">
         </div>
-    
-        <h1 class="mt-4 fw-bold lh-1" style="font-size: 2.7rem;">
+
+        <h1 class="mt-4 fw-bold lh-1 text-white" style="font-size: 2.7rem;">
             HAMZAH & NAILA
         </h1>
-    
+
         <!-- Tombol Scroll Down -->
         <div class="scroll-down position-absolute bottom-0 mb-4">
             <span class="scroll-text">Scroll</span>
             <div class="scroll-icon"></div>
         </div>
-    
+
         <!-- Gelombang bergerak di bawah -->
         <div class="wave-bottom">
             <!-- Gelombang dasar (tebal) -->
@@ -301,65 +361,69 @@
             <h2 class="mb-5 text-black" style="text-shadow: 0 2px 6px rgba(0,0,0,0.7); font-size: 2rem;">
                 Profil Mempelai
             </h2>
-    
+
             <div class="row justify-content-center g-4">
                 <!-- Mempelai Pria -->
                 <div class="col-12 col-sm-6 d-flex flex-column align-items-center">
                     <div class="card position-relative w-100 mb-3"
                         style="max-width: 300px; height: 300px; border-radius: 1rem; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.3);">
-    
+
                         <!-- Foto Background -->
                         <img src="/images/pria.jpg" class="card-img" style="object-fit: cover; height: 100%;">
-    
+
                         <!-- BG Kertas di bawah -->
                         <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 120px; 
                                     background: url('/images/bg-666.png') center bottom / contain no-repeat;">
                         </div>
-    
+
                         <!-- Overlay Nama (panggilan) -->
                         <div
                             style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; padding: 0 10px;">
-                            <h2 style="color: #000; text-shadow: 0 2px 6px rgba(0,0,0,0.7); font-size: 1.5rem; margin: 0;">
+                            <h2
+                                style="color: #000; text-shadow: 0 2px 6px rgba(0,0,0,0.7); font-size: 1.5rem; margin: 0;">
                                 Hamzah
                             </h2>
                         </div>
                     </div>
-    
+
                     <!-- Nama Lengkap & Keterangan di luar card -->
                     <div class="text-center">
                         <h2
                             style="font-size: 1.5rem; font-weight: bold; margin: 0; color: #000; text-shadow: 0 1px 6px rgba(0,0,0,0.7);">
                             Hamzah Akbar Pratama, S.Kom
-                    </h2>
+                        </h2>
                         <p
                             style="font-size: 0.95rem; margin: 0.25rem 0 0; color: #000; text-shadow: 0 1px 4px rgba(0,0,0,0.6);">
                             Putra dari Bapak Dwi Suseno & Ibu Sukasmi
                         </p>
                     </div>
                 </div>
-    
+
                 <!-- Mempelai Wanita -->
                 <div class="col-12 col-sm-6 d-flex flex-column align-items-center">
                     <div class="card position-relative w-100 mb-3"
                         style="max-width: 300px; height: 300px; border-radius: 1rem; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.3);">
-                    
+
                         <!-- Foto Background -->
-                        <img src="/images/wanita.jpg" class="card-img" style="object-fit: cover; width: 100%; height: 100%;">
-                    
+                        <img src="/images/wanita.jpg" class="card-img"
+                            style="object-fit: cover; width: 100%; height: 100%;">
+
                         <!-- BG Kertas di bawah -->
                         <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 120px; 
                                     background: url('/images/bg-666.png') center bottom / contain no-repeat;">
                         </div>
-                    
+
                         <!-- Overlay Nama (panggilan) -->
-                        <div style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; padding: 0 10px;">
-                            <h2 style="color: #000; text-shadow: 0 2px 6px rgba(0,0,0,0.7); font-size: 1.5rem; margin: 0;">
+                        <div
+                            style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; padding: 0 10px;">
+                            <h2
+                                style="color: #000; text-shadow: 0 2px 6px rgba(0,0,0,0.7); font-size: 1.5rem; margin: 0;">
                                 Naila
                             </h2>
                         </div>
                     </div>
 
-    
+
                     <!-- Nama Lengkap & Keterangan di luar card -->
                     <div class="text-center">
                         <h2
@@ -381,12 +445,12 @@
     <!-- =================== SECTION 3: SAVE THE DATE =================== -->
     <section class="text-center d-flex flex-column justify-content-center align-items-center py-5"
         style="background: url('/images/bg-144.png') center/cover no-repeat; background-size: cover; height: 500px; color: black;">
-    
+
         <h2 class="display-5 mb-3 text-shadow">Save The Date</h2>
         <p class="lead mb-1">Jum'at, 10 April 2026</p>
         <p class="lead mb-1">Pukul 07:00 WIB</p>
         <p class="lead">Gedung Graha Wedding — Jakarta</p>
-    
+
         <!-- Countdown -->
         <div id="countdown" class="h2 fw-bold mt-4"></div>
     </section>
@@ -401,7 +465,7 @@
                    border-bottom-left-radius: 0.5rem; 
                    border-bottom-right-radius: 0.5rem; 
                    border: none;">
-    
+
             <!-- Judul Card -->
             <div class="card-header bg-dark bg-opacity-40 border-0 text-center py-4 text-white rounded-top">
                 <h2 class="h4 mb-1 fw-bold" style="letter-spacing: 1px; text-shadow: 0 2px 6px rgba(0,0,0,0.6);">
@@ -412,7 +476,7 @@
                 </p>
             </div>
 
-    
+
             <!-- Body Card: Iframe Maps -->
             <div class="card-body d-flex justify-content-center align-items-center p-2 ">
                 <iframe class="rounded-3 shadow"
@@ -426,78 +490,78 @@
 
     <!-- =================== SECTION 5: GALLERY FOTO =================== -->
     <section class="gallery-section text-center">
-    
+
         <h2 class="gallery-title mb-5 fs-1 text-black">Gallery</h2>
-    
+
         <div class="container">
             <div class="row g-3 justify-content-center">
-    
+
                 <div class="col-6 col-sm-4">
                     <img src="/images/bg-profil.jpg" class="img-fluid rounded-3 gallery-img">
                 </div>
-    
+
                 <div class="col-6 col-sm-4">
                     <img src="/images/bg-profil.jpg" class="img-fluid rounded-3 gallery-img">
                 </div>
-    
+
                 <div class="col-6 col-sm-4">
                     <img src="/images/bg-profil.jpg" class="img-fluid rounded-3 gallery-img">
                 </div>
-    
+
                 <div class="col-6 col-sm-4">
                     <img src="/images/bg-profil.jpg" class="img-fluid rounded-3 gallery-img">
                 </div>
-    
+
                 <div class="col-6 col-sm-4">
                     <img src="/images/bg-profil.jpg" class="img-fluid rounded-3 gallery-img">
                 </div>
-    
+
                 <div class="col-6 col-sm-4">
                     <img src="/images/bg-profil.jpg" class="img-fluid rounded-3 gallery-img">
                 </div>
-    
+
             </div>
         </div>
-    
+
     </section>
 
 
     <!-- =================== SECTION 6: DOA & HARAPAN =================== -->
     <section class="doa-section text-center">
-    
+
         <div class="container">
-    
+
             <h2 class="fw-bold mb-4 display-6">Doa & Harapan</h2>
-    
+
             <p class="mx-auto mb-0" style="max-width: 700px; line-height: 1.8;">
                 “Semoga Allah SWT memberikan keberkahan, kebahagiaan, dan
                 sakinah mawaddah warahmah kepada kedua mempelai hingga akhir hayat.”
             </p>
-    
+
         </div>
-    
+
     </section>
 
 
 
     <!-- =================== SECTION 7: RSVP =================== -->
     <section class="section-bg rsvp text-center">
-    
+
         <h2 class="text-4xl mb-6">RSVP</h2>
-    
+
         <form class="max-w-xl mx-auto grid grid-cols-1 gap-4">
-    
+
             <input type="text" placeholder="Nama Anda" class="p-3 rounded-lg border border-gray-300">
-    
+
             <input type="text" placeholder="Jumlah Kehadiran" class="p-3 rounded-lg border border-gray-300">
-    
+
             <textarea placeholder="Ucapan & Doa" class="p-3 rounded-lg border border-gray-300 h-24"></textarea>
-    
+
             <button class="bg-rose-700 text-white py-3 rounded-lg shadow-lg">
                 Kirim RSVP
             </button>
         </form>
-    
+
     </section>
 
 
@@ -562,14 +626,10 @@
             }
         }, 1000);
     </script>
-    
+
 
 
 
 </body>
 
 </html>
-
-
-
-
