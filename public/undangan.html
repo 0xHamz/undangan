@@ -79,16 +79,15 @@
             display: block;
             width: 100%;
             height: 250px;
-            overflow: hideen;
         }
 
         .wave1 { bottom: -5px; }
         .wave2 { bottom: 30px; }
         .wave3 { bottom: 40px; }
 
-        @keyframes waveMove1 { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-        @keyframes waveMove2 { 0% { transform: translateX(0); } 100% { transform: translateX(-30%); } }
-        @keyframes waveMove3 { 0% { transform: translateX(0); } 100% { transform: translateX(-40%); } }
+        @keyframes waveMove1 { 0% { transform: translateX(0); } 100% { transform: translateX(50%); } }
+        @keyframes waveMove2 { 0% { transform: translateX(0); } 100% { transform: translateX(30%); } }
+        @keyframes waveMove3 { 0% { transform: translateX(0); } 100% { transform: translateX(40%); } }
 
         .wave1 path { animation: waveMove1 15s linear infinite; }
         .wave2 path { animation: waveMove2 20s linear infinite; }
@@ -570,6 +569,7 @@
 </body>
 
 </html>
+
 
 
 
