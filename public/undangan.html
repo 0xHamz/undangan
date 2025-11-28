@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Hamzah & Naila</title>
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/montserrat" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/great-vibes" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/playfair-display-sc" rel="stylesheet">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+
+        
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            font-family: 'Montserrat', sans-serif;
+                transition: background-image 1s ease-in-out; /* fade halus antar gambar */
+                overflow-x: hidden;
+            background: url('/images/bg-2.jpg') center/cover no-repeat fixed;
+        }
+
+        /* Background Parallax */
+.hero-section {
+    background: url('/images/bungafull.png') center/cover no-repeat fixed;
+}
+
+/* Typography */
+.hero-section h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+}
+
+.hero-section h1 {
+    font-family: 'Playfair Display SC', serif;
+}
+
+/* Fade In */
+.fade-in {
+    opacity: 0;
+    animation: fadeInAnim 1.6s ease-out forwards;
+}
+
+@keyframes fadeInAnim {
+    from { opacity: 0; transform: translateY(25px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+
+        /* Background bunga fixed */
+        .bg-fixed-full {
+            background: url('/images/bungafull.png') center/cover no-repeat fixed;
+        }
+
+        .wave-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 120px;
+            overflow: visible;
+            line-height: 0;
+        }
+
+        .wave-bottom svg {
+            position: absolute;
+            left: 0;
+            display: block;
+            width: 200%;
+            height: 250px;
+        }
+
+        .wave1 { bottom: -5px; }
+        .wave2 { bottom: 30px; }
+        .wave3 { bottom: 40px; }
+
+        @keyframes waveMove1 { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        @keyframes waveMove2 { 0% { transform: translateX(0); } 100% { transform: translateX(-30%); } }
+        @keyframes waveMove3 { 0% { transform: translateX(0); } 100% { transform: translateX(-40%); } }
+
+        .wave1 path { animation: waveMove1 15s linear infinite; }
+        .wave2 path { animation: waveMove2 20s linear infinite; }
+        .wave3 path { animation: waveMove3 25s linear infinite; }
+
+        /* Scroll Down Button */
+.scroll-down {
+    text-align: center;
+    animation: fadeInAnim 2s ease-out forwards;
+}
+
+.scroll-text {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    opacity: 0.7;
+}
+
+.scroll-icon {
+    width: 22px;
+    height: 35px;
+    border: 2px solid #444;
+    border-radius: 12px;
+    margin: 6px auto 0;
+    position: relative;
+}
+
+.scroll-icon::after {
+    content: "";
+    width: 6px;
+    height: 6px;
+    background: #444;
+    border-radius: 50%;
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scrollAnim 1.4s infinite;
+}
+
+@keyframes scrollAnim {
+    0% { opacity: 1; transform: translate(-50%, 0); }
+    100% { opacity: 0; transform: translate(-50%, 12px); }
+}
+
+        /* Judul & font */
+        h2 {
+            font-family: 'Great Vibes', cursive;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display SC', serif;
+            letter-spacing: 2px;
+        }
+
+        .frame-oval {
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .overlay-dark {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(4px);
+        }
+
+        @media (max-width: 576px) {
+            .card-map {
+                width: 90% !important;   /* mengecil otomatis di HP */
+                height: 380px !important;
+            }
+
+            .card-map iframe {
+                width: 100% !important;
+                height: 250px !important;
+            }
+        }
+
+        /* Background gallery full-atas */
+        .gallery-section {
+            background: url('/images/bg-122.png') top center / cover no-repeat;
+            padding: 0 0 4px 0; /* atas 0 supaya mentok, bawah ada ruang */
+        }
+
+        /* Judul turun sedikit */
+        .gallery-title {
+            padding-top: 120px; /* lebih rapi daripada margin besar */
+        }
+
+        /* Animasi gambar */
+        .gallery-img {
+            opacity: 0;
+            transform: scale(0.1);
+            transition: all 0.8s ease-out;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+        }
+
+        .gallery-img.show {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .doa-section {
+            background: url('/images/bg-66.png') center/cover no-repeat;
+            padding: 100px 0; /* jarak atas–bawah */
+            color: #000;      /* bisa diubah jadi putih kalau mau */
+        }
+
+        /* Background RSVP */
+        .section-bg.rsvp {
+            background: url('/images/bg-14.png') center/cover no-repeat;
+            padding: 120px 0; /* lebih proporsional */
+        }
+
+        /* Grid gallery tetap 2 kolom di tablet/desktop */
+        @media (min-width: 640px) {
+            .gallery-section .grid {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 0 20px;
+            }
+        }
+        #countdown {
+            color: white; /* agar terlihat di atas bg */
+            text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+/* Gambar Parallax */
+.parallax-img {
+    position: absolute;
+    width: 180px;
+    opacity: 0;
+    transform: scale(0.7);
+    transition: opacity 1s ease, transform 1.2s ease;
+    pointer-events: none;
+    z-index: 2;
+}
+
+#musicBtn {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 2000;
+    background: white;
+    padding: 14px 16px;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    font-size: 20px;
+}
+
+
+
+    </style>
+</head>
+
+<body class="text-black">
+    <button id="musicBtn" class="position-fixed bottom-0 end-0 m-4 bg-white p-3 rounded-circle shadow text-dark z-3">
+        🔊
+    </button>
+
+    <!-- =================== HALAMAN UTAMA =================== -->
+    <section class="hero-section min-vh-100 w-100 d-flex flex-column align-items-center 
+        text-center text-dark justify-content-center px-3 position-relative fade-in">
+        
+        <!-- Musik -->
+        <audio id="bgm" loop>
+            <source src="/music/wedding.mp3" type="audio/mpeg">
+        </audio>
+    
+    
+        <h2 class="display-5 mb-3">Wedding Of</h2>
+    
+        <div class="rounded-circle overflow-hidden shadow border border-white" style="width: 160px; height: 160px;">
+            <img src="/images/bg-profil.jpg" class="w-100 h-100 object-fit-cover">
+        </div>
+    
+        <h1 class="mt-4 fw-bold lh-1" style="font-size: 2.7rem;">
+            HAMZAH & NAILA
+        </h1>
+    
+        <!-- Tombol Scroll Down -->
+        <div class="scroll-down position-absolute bottom-0 mb-4">
+            <span class="scroll-text">Scroll</span>
+            <div class="scroll-icon"></div>
+        </div>
+    
+        <!-- Gelombang bergerak di bawah -->
+        <div class="wave-bottom">
+            <!-- Gelombang dasar (tebal) -->
+            <svg viewBox="0 0 1440 120" class="w-full wave wave1" preserveAspectRatio="none">
+                <path d="M0,40 C360,160 1080,-40 1440,60 L1440,120 L0,120 Z" fill="#f4f4f4"></path>
+            </svg>
+            <!-- Gelombang tipis 1 (agak atas, lebih melengkung) -->
+            <svg viewBox="0 0 1440 120" class="w-full wave wave2" preserveAspectRatio="none">
+                <path d="M0,50 C360,140 1080,0 1440,70 L1440,120 L0,120 Z" fill="#f4f4f4" opacity="0.7"></path>
+            </svg>
+            <!-- Gelombang tipis 2 (lebih tipis & lebih atas, melengkung) -->
+            <svg viewBox="0 0 1440 120" class="w-full wave wave3" preserveAspectRatio="none">
+                <path d="M0,60 C360,120 1080,-10 1440,80 L1440,120 L0,120 Z" fill="#f4f4f4" opacity="0.5"></path>
+            </svg>
+        </div>
+
+
+
+    </section>
+
+    <!-- =================== HALAMAN PROFIL MEMPELAI =================== -->
+    <section class="py-5 text-center" style="background: #f4f4f4;">
+        <div class="container">
+            <h2 class="mb-5 text-black" style="text-shadow: 0 2px 6px rgba(0,0,0,0.7); font-size: 2rem;">
+                Profil Mempelai
+            </h2>
+    
+            <div class="row justify-content-center g-4">
+                <!-- Mempelai Pria -->
+                <div class="col-12 col-sm-6 d-flex flex-column align-items-center">
+                    <div class="card position-relative w-100 mb-3"
+                        style="max-width: 300px; height: 300px; border-radius: 1rem; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.3);">
+    
+                        <!-- Foto Background -->
+                        <img src="/images/pria.jpg" class="card-img" style="object-fit: cover; height: 100%;">
+    
+                        <!-- BG Kertas di bawah -->
+                        <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 120px; 
+                                    background: url('/images/bg-666.png') center bottom / contain no-repeat;">
+                        </div>
+    
+                        <!-- Overlay Nama (panggilan) -->
+                        <div
+                            style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; padding: 0 10px;">
+                            <h2 style="color: #000; text-shadow: 0 2px 6px rgba(0,0,0,0.7); font-size: 1.5rem; margin: 0;">
+                                Hamzah
+                            </h2>
+                        </div>
+                    </div>
+    
+                    <!-- Nama Lengkap & Keterangan di luar card -->
+                    <div class="text-center">
+                        <h2
+                            style="font-size: 1.5rem; font-weight: bold; margin: 0; color: #000; text-shadow: 0 1px 6px rgba(0,0,0,0.7);">
+                            Hamzah Akbar Pratama, S.Kom
+                    </h2>
+                        <p
+                            style="font-size: 0.95rem; margin: 0.25rem 0 0; color: #000; text-shadow: 0 1px 4px rgba(0,0,0,0.6);">
+                            Putra dari Bapak Dwi Suseno & Ibu Sukasmi
+                        </p>
+                    </div>
+                </div>
+    
+                <!-- Mempelai Wanita -->
+                <div class="col-12 col-sm-6 d-flex flex-column align-items-center">
+                    <div class="card position-relative w-100 mb-3"
+                        style="max-width: 300px; height: 300px; border-radius: 1rem; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.3);">
+                    
+                        <!-- Foto Background -->
+                        <img src="/images/wanita.jpg" class="card-img" style="object-fit: cover; width: 100%; height: 100%;">
+                    
+                        <!-- BG Kertas di bawah -->
+                        <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 120px; 
+                                    background: url('/images/bg-666.png') center bottom / contain no-repeat;">
+                        </div>
+                    
+                        <!-- Overlay Nama (panggilan) -->
+                        <div style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; padding: 0 10px;">
+                            <h2 style="color: #000; text-shadow: 0 2px 6px rgba(0,0,0,0.7); font-size: 1.5rem; margin: 0;">
+                                Naila
+                            </h2>
+                        </div>
+                    </div>
+
+    
+                    <!-- Nama Lengkap & Keterangan di luar card -->
+                    <div class="text-center">
+                        <h2
+                            style="font-size: 1.5rem; font-weight: bold; margin: 0; color: #000; text-shadow: 0 2px 6px rgba(0,0,0,0.7);">
+                            Naila Farah, S.Eng
+                        </h2>
+                        <p
+                            style="font-size: 0.95rem; margin: 0.25rem 0 0; color: #000; text-shadow: 0 1px 4px rgba(0,0,0,0.6);">
+                            Putri dari Bapak Suyanto & Ibu Rukoyah
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- =================== SECTION 3: SAVE THE DATE =================== -->
+    <section class="text-center d-flex flex-column justify-content-center align-items-center py-5"
+        style="background: url('/images/bg-144.png') center/cover no-repeat; background-size: cover; height: 500px; color: black;">
+    
+        <h2 class="display-5 mb-3 text-shadow">Save The Date</h2>
+        <p class="lead mb-1">Jum'at, 10 April 2026</p>
+        <p class="lead mb-1">Pukul 07:00 WIB</p>
+        <p class="lead">Gedung Graha Wedding — Jakarta</p>
+    
+        <!-- Countdown -->
+        <div id="countdown" class="h2 fw-bold mt-4"></div>
+    </section>
+
+
+    <!-- =================== SECTION 4: MAP LOKASI =================== -->
+    <section class="text-center d-flex justify-content-center my-5">
+        <div class="card shadow card-map" style="width: 400px; height: 500px; 
+                   background: rgba(255,255,255,0.15); 
+                   backdrop-filter: blur(3px); 
+                   border-radius: 1.5rem; 
+                   border-bottom-left-radius: 0.5rem; 
+                   border-bottom-right-radius: 0.5rem; 
+                   border: none;">
+    
+            <!-- Judul Card -->
+            <div class="card-header bg-dark bg-opacity-40 border-0 text-center py-4 text-white rounded-top">
+                <h2 class="h4 mb-1 fw-bold" style="letter-spacing: 1px; text-shadow: 0 2px 6px rgba(0,0,0,0.6);">
+                    Lokasi Acara
+                </h2>
+                <p class="mb-0 text-light" style="font-size: 0.95rem; text-shadow: 0 1px 4px rgba(0,0,0,0.5);">
+                    Gedung Graha Wedding, Jakarta Selatan
+                </p>
+            </div>
+
+    
+            <!-- Body Card: Iframe Maps -->
+            <div class="card-body d-flex justify-content-center align-items-center p-2 ">
+                <iframe class="rounded-3 shadow"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247.60741432229136!2d108.63313748928135!3d-6.80404320488635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6f0358e294ad29%3A0x436df79184154682!2sHikmah%20Cell!5e0!3m2!1sid!2sid!4v1764230424084!5m2!1sid!2sid"
+                    width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =================== SECTION 5: GALLERY FOTO =================== -->
+    <section class="gallery-section text-center">
+    
+        <h2 class="gallery-title mb-5 fs-1 text-black">Gallery</h2>
+    
+        <div class="container">
+            <div class="row g-3 justify-content-center">
+    
+                <div class="col-6 col-sm-4">
+                    <img src="/images/bg-profil.jpg" class="img-fluid rounded-3 gallery-img">
+                </div>
+    
+                <div class="col-6 col-sm-4">
+                    <img src="/images/bg-profil.jpg" class="img-fluid rounded-3 gallery-img">
+                </div>
+    
+                <div class="col-6 col-sm-4">
+                    <img src="/images/bg-profil.jpg" class="img-fluid rounded-3 gallery-img">
+                </div>
+    
+                <div class="col-6 col-sm-4">
+                    <img src="/images/bg-profil.jpg" class="img-fluid rounded-3 gallery-img">
+                </div>
+    
+                <div class="col-6 col-sm-4">
+                    <img src="/images/bg-profil.jpg" class="img-fluid rounded-3 gallery-img">
+                </div>
+    
+                <div class="col-6 col-sm-4">
+                    <img src="/images/bg-profil.jpg" class="img-fluid rounded-3 gallery-img">
+                </div>
+    
+            </div>
+        </div>
+    
+    </section>
+
+
+    <!-- =================== SECTION 6: DOA & HARAPAN =================== -->
+    <section class="doa-section text-center">
+    
+        <div class="container">
+    
+            <h2 class="fw-bold mb-4 display-6">Doa & Harapan</h2>
+    
+            <p class="mx-auto mb-0" style="max-width: 700px; line-height: 1.8;">
+                “Semoga Allah SWT memberikan keberkahan, kebahagiaan, dan
+                sakinah mawaddah warahmah kepada kedua mempelai hingga akhir hayat.”
+            </p>
+    
+        </div>
+    
+    </section>
+
+
+
+    <!-- =================== SECTION 7: RSVP =================== -->
+    <section class="section-bg rsvp text-center">
+    
+        <h2 class="text-4xl mb-6">RSVP</h2>
+    
+        <form class="max-w-xl mx-auto grid grid-cols-1 gap-4">
+    
+            <input type="text" placeholder="Nama Anda" class="p-3 rounded-lg border border-gray-300">
+    
+            <input type="text" placeholder="Jumlah Kehadiran" class="p-3 rounded-lg border border-gray-300">
+    
+            <textarea placeholder="Ucapan & Doa" class="p-3 rounded-lg border border-gray-300 h-24"></textarea>
+    
+            <button class="bg-rose-700 text-white py-3 rounded-lg shadow-lg">
+                Kirim RSVP
+            </button>
+        </form>
+    
+    </section>
+
+
+
+
+    <script>
+        const bgm = document.getElementById("bgm");
+        const musicBtn = document.getElementById("musicBtn");
+
+        window.addEventListener("load", () => {
+            bgm.play().catch(() => { });
+        });
+
+        musicBtn.addEventListener("click", () => {
+            if (bgm.paused) {
+                bgm.play();
+                musicBtn.textContent = "🔊";
+            } else {
+                bgm.pause();
+                musicBtn.textContent = "🔇";
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const images = document.querySelectorAll(".gallery-section img");
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            images.forEach(img => observer.observe(img));
+        });
+    </script>
+    <script>
+        // Set tanggal target
+        const countDownDate = new Date("April 10, 2026 00:00:00").getTime();
+
+        // Update setiap 1 detik
+        const x = setInterval(function () {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+
+            // Hitung waktu
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Tampilkan countdown
+            document.getElementById("countdown").innerHTML =
+                days + " Hari " + hours + " Jam " + minutes + " Menit " + seconds + " Detik";
+
+            // Jika sudah lewat
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "Hari H!";
+            }
+        }, 1000);
+    </script>
+    
+
+
+
+</body>
+
+</html>
