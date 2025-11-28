@@ -29,7 +29,16 @@
                 transition: background-image 1s ease-in-out; /* fade halus antar gambar */
                 overflow-x: hidden;
             background: url('/images/bg-2.jpg') center/cover no-repeat fixed;
-        }
+            /* Full height */
+    width: 100%;
+    min-height: 100vh;            /* layar penuh tinggi viewport */
+
+    /* Flex untuk center content */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;        
+}
 
         /* Background Parallax */
 .hero-section {
