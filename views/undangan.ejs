@@ -114,24 +114,25 @@ body {
             background: url('/images/bungafull.png') center/cover no-repeat fixed;
         }
 
-        .wave-bottom {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 120px;
-            overflow: hidden;
-            line-height: 0;
-        }
+        /* Batasi overflow horizontal gelombang */
+.wave-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    overflow: hidden; /* sudah ada, oke */
+}
 
-        .wave-bottom svg {
-            position: absolute;
-            left: 0;
-            display: block;
-            width: 100%;
-            height: 250px;
-            overflow: hidden;
-        }
+.wave-bottom svg {
+    position: absolute;
+    left: 0;
+    display: block;
+    width: 100%; /* Ubah dari 200% ke 100% */
+    height: 250px;
+    overflow: hidden;
+}
+
 
         .wave1 { bottom: -5px; }
         .wave2 { bottom: 30px; }
