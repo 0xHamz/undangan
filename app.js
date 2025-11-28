@@ -13,8 +13,8 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
 // Middleware
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // View engine
 app.set('view engine', 'ejs');
@@ -25,21 +25,9 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
-// ⭐ Halaman undangan (halaman kedua)
+// Halaman undangan
 app.get('/undangan', (req, res) => {
     res.render('undangan');
-});
-
-// Submit RSVP
-app.post('/api/rsvp', async (req, res) => {
-    const { name, jumlah } = req.body;
-    const { data, error } = await supabase
-        .from('rsvp')
-        .insert([{ name, jumlah }]);
-
-    if (error) return res.status(500).json({ error: error.message });
-
-    res.json({ message: `Terima kasih ${name}, konfirmasi diterima!` });
 });
 
 // Halaman admin
@@ -48,10 +36,18 @@ app.get('/admin', async (req, res) => {
         .from('rsvp')
         .select('*')
         .order('created_at', { ascending: false });
-
-    if (error) return res.send('Terjadi kesalahan: ' + error.message);
-
+    if (error) return res.send('Error: ' + error.message);
     res.render('admin', { rsvps });
 });
 
-app.listen(PORT, '0.0.0.0', () => console.log(`Server running on http://localhost:${PORT}`));
+// API RSVP
+app.post('/api/rsvp', async (req, res) => {
+    const { name, jumlah } = req.body;
+    const { error } = await supabase
+        .from('rsvp')
+        .insert([{ name, jumlah }]);
+    if (error) return res.status(500).json({ error: error.message });
+    res.json({ message: `Terima kasih ${name}, RSVP diterima!` });
+});
+
+app.listen(PORT, () => console.log(`Server berjalan di http://localhost:${PORT}`));
