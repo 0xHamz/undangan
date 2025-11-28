@@ -19,28 +19,64 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
-
-        
-        body {
+/* Body / background utama */
+body {
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
     transition: background-image 1s ease-in-out;
 
     /* Background */
-    background-image: url('/images/bg-2.jpg'); /* path gambar */
-    background-position: center center;        /* posisi tengah */
-    background-size: cover;                    /* menutupi seluruh layar */
-    background-repeat: no-repeat;              /* jangan ulangi */
-    background-attachment: fixed;             /* efek parallax / tetap di tempat */
-    
-    /* Pastikan overflow tidak horizontal */
+    background-image: url('/images/bg-2.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    /* Jangan pakai fixed di mobile, karena bisa muncul geser horizontal */
+    background-attachment: scroll;
+
+    /* Pastikan tidak ada scroll horizontal */
     overflow-x: hidden;
 }
 
-@media (max-width: 768px) {
+/* Desktop: bisa pakai parallax fixed */
+@media (min-width: 769px) {
     body {
-        background-attachment: scroll; /* fixed kadang bikin lag di HP */
+        background-attachment: fixed; /* parallax di desktop */
+    }
+}
+
+/* Hero section dengan background fixed */
+.hero-section {
+    background: url('/images/bungafull.png') center/cover no-repeat;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden; /* mencegah horizontal scroll */
+}
+
+/* Semua section dengan background cover full */
+.bg-fixed-full {
+    background: url('/images/bungafull.png') center/cover no-repeat;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Gallery dan section lain */
+.gallery-section, .doa-section, .section-bg.rsvp {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    overflow-x: hidden; /* selalu pastikan ini */
+}
+
+/* Media query mobile: tetap responsif, background menyesuaikan */
+@media (max-width: 768px) {
+    body, .hero-section, .bg-fixed-full, .gallery-section, .doa-section, .section-bg.rsvp {
+        background-attachment: scroll; /* fixed bisa bikin lag & white space di HP */
+        background-size: cover;        /* tetap full */
     }
 }
 
