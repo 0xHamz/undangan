@@ -269,12 +269,28 @@
             min-height: 500px;       /* supaya background pasti terlihat */
             color: #000;             /* teks hitam */
         }
+        /* --- Versi Smartphone Kecil (≤480px) --- */
+        @media (max-width: 480px) {
+            .doa2-section {
+                padding: 40px 15px;
+                background-size: 140%;
+                min-height: 350px;
+            }
+
+            .doa2-section h2 {
+                font-size: 24px;
+            }
+
+            .doa2-section p {
+                font-size: 14px;
+            }
+        }
 
 
         /* Background RSVP */
         .section-bg.rsvp {
             background: url('/images/bg-14.png') center/cover no-repeat;
-            padding: 200px 0;
+            padding: 300px 0;
             /* lebih proporsional */
         }
 
