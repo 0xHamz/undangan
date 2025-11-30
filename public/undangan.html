@@ -273,8 +273,8 @@
         @media (max-width: 480px) {
             .doa2-section {
                 padding: 40px 15px;
-                background-size: 140%;
-                min-height: 350px;
+                background-size: 80%;
+                min-height: 500px;
             }
 
             .doa2-section h2 {
@@ -283,6 +283,25 @@
 
             .doa2-section p {
                 font-size: 14px;
+            }
+        }
+
+        /* --- Versi Mobile --- */
+        @media (max-width: 768px) {
+            .doa2-section {
+                padding: 170px 20px;       /* jauh lebih rapat */
+                background-size: 80%;    /* perbesar sedikit biar tidak kosong */
+                min-height: 500px;        /* supaya tetap proporsional */
+            }
+
+            .doa2-section p {
+                font-size: 15px;
+                line-height: 1.7;
+                padding: 0 80px;    /* biar teks tidak terlalu mepet */
+            }
+
+            .doa2-section h2 {
+                font-size: 28px;
             }
         }
 
@@ -421,15 +440,14 @@
     
             <div class="row justify-content-center g-4">
                 <!-- Mempelai Pria -->
-                <div class="col-6 col-md-6 d-flex flex-column align-items-center">
+                <div class="col-12 col-md-6 d-flex flex-column align-items-center">
                     <div class="card position-relative w-100 mb-3"
                         style="max-width: 300px; height: 300px; border-radius: 1rem; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.3);">
                         <img src="/images/pria.jpg" class="card-img" style="object-fit: cover; height: 100%;">
-                        <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 120px; 
+                        <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 120px;
                                     background: url('/images/bg-666.png') center bottom / contain no-repeat;">
                         </div>
-                        <div
-                            style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; padding: 0 10px;">
+                        <div style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; padding: 0 10px;">
                             <h2 style="color: #000; text-shadow: 0 2px 6px rgba(0,0,0,0.7); font-size: 1.5rem; margin: 0;">
                                 Hamzah
                             </h2>
@@ -440,24 +458,21 @@
                             style="font-size: 1.5rem; font-weight: bold; margin: 0; color: #000; text-shadow: 0 1px 6px rgba(0,0,0,0.7);">
                             Hamzah Akbar Pratama, S.Kom
                         </h2>
-                        <p
-                            style="font-size: 0.95rem; margin: 0.25rem 0 0; color: #000; text-shadow: 0 1px 4px rgba(0,0,0,0.6);">
+                        <p style="font-size: 0.95rem; margin: 0.25rem 0 0; color: #000; text-shadow: 0 1px 4px rgba(0,0,0,0.6);">
                             Putra dari Bapak Dwi Suseno & Ibu Sukasmi
                         </p>
                     </div>
                 </div>
-    
+                
                 <!-- Mempelai Wanita -->
-                <div class="col-6 col-md-6 d-flex flex-column align-items-center">
+                <div class="col-12 col-md-6 d-flex flex-column align-items-center">
                     <div class="card position-relative w-100 mb-3"
                         style="max-width: 300px; height: 300px; border-radius: 1rem; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.3);">
-                        <img src="/images/wanita.jpg" class="card-img"
-                            style="object-fit: cover; width: 100%; height: 100%;">
-                        <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 120px; 
+                        <img src="/images/wanita.jpg" class="card-img" style="object-fit: cover; width: 100%; height: 100%;">
+                        <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 120px;
                                     background: url('/images/bg-666.png') center bottom / contain no-repeat;">
                         </div>
-                        <div
-                            style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; padding: 0 10px;">
+                        <div style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; padding: 0 10px;">
                             <h2 style="color: #000; text-shadow: 0 2px 6px rgba(0,0,0,0.7); font-size: 1.5rem; margin: 0;">
                                 Naila
                             </h2>
@@ -468,13 +483,11 @@
                             style="font-size: 1.5rem; font-weight: bold; margin: 0; color: #000; text-shadow: 0 2px 6px rgba(0,0,0,0.7);">
                             Naila Farah, S.Pd
                         </h2>
-                        <p
-                            style="font-size: 0.95rem; margin: 0.25rem 0 0; color: #000; text-shadow: 0 1px 4px rgba(0,0,0,0.6);">
+                        <p style="font-size: 0.95rem; margin: 0.25rem 0 0; color: #000; text-shadow: 0 1px 4px rgba(0,0,0,0.6);">
                             Putri dari Bapak Suyanto & Ibu Rukoyah
                         </p>
                     </div>
                 </div>
-            </div>
         </div>
     </section>
 
@@ -484,13 +497,13 @@
         style="background: url('/images/bg-144.png') center/cover no-repeat; background-size: cover; height: 500px; color: black;">
 
         <h2 class="display-5 mb-4 text-black fw-bold" style="text-shadow: 0 2px 6px rgba(0,0,0,0.7); font-size: 2rem;">Save The Date</h2>
-        <p class="lead mb-1">Jum'at, 10 April 2026</p>
-        <p class="lead mb-1">Pukul 07:00 WIB</p>
-        <p class="lead">Japura Kidul, Kec. Astanajapura</p>
-        <p class="lead">Kabupaten Cirebon, Jawa Barat</p>
+        <p class=" mb-1">Jum'at, 10 April 2026</p>
+        <p class=" mb-1">Pukul 07:00 WIB</p>
+        <p>Japura Kidul, Kec. Astanajapura</p>
+        <p>Kabupaten Cirebon, Jawa Barat</p>
 
         <!-- Countdown -->
-        <div id="countdown" class="h2 fw-bold mt-4"></div>
+        <div id="countdown" class="h5 fw-bold mt-4"></div>
     </section>
 
 
