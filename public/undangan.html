@@ -35,27 +35,6 @@
         }
 
 
-        /* Background Parallax */
-        .hero-section {
-            background: url('/images/download-Photoroom.png') center/cover no-repeat fixed;
-        }
-
-        /* Typography */
-        .hero-section h2 {
-            font-family: 'Great Vibes', cursive;
-            font-size: 2.5rem;
-        }
-
-        .hero-section h1 {
-            font-family: 'Playfair Display SC', serif;
-        }
-
-        /* Fade In */
-        .fade-in {
-            opacity: 0;
-            animation: fadeInAnim 1.6s ease-out forwards;
-        }
-
         @keyframes fadeInAnim {
             from {
                 opacity: 0;
@@ -274,7 +253,7 @@
             .doa2-section {
                 padding: 40px 15px;
                 background-size: 80%;
-                min-height: 350px;
+                min-height: 500px;
             }
 
             .doa2-section h2 {
@@ -291,7 +270,7 @@
             .doa2-section {
                 padding: 140px 20px;       /* jauh lebih rapat */
                 background-size: 90% 90%;    /* perbesar sedikit biar tidak kosong */
-                min-height: 500px;        /* supaya tetap proporsional */
+                min-height: 300px;        /* supaya tetap proporsional */
             }
 
             .doa2-section p {
@@ -344,53 +323,23 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
             font-size: 20px;
         }
-        .hero-box {
-    background: linear-gradient(
-        to bottom,
-        rgba(30, 30, 30, 0.6),
-        rgba(30, 30, 30, 0.4)
-    ); /* gradient tetap warna asli */
-    
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
 
-    border: 2px solid rgba(255, 255, 255, 0.3); /* border putih halus */
-    border-radius: 10px;
 
-    padding: 30px;
-    transform: translateY(-30px);
-
-    width: 90%;
-    max-width: 350px;
-
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+#hero {
+    position: relative;
+    overflow: hidden; /* biar video tidak keluar */
 }
 
-
-.name-box {
-    background: rgba(255, 255, 255, 0.15);
-    border: 2px solid rgba(255, 255, 255, 0.4);
-    padding: 15px 30px;
-    border-radius: 20px;
-    backdrop-filter: blur(4px);
-}
-
-.name-box .name-line {
-    font-size: 2.2rem;
-    font-weight: bold;
-    line-height: 1.1;
-    white-space: nowrap;
-}
-
-.bg-video {
-    position: fixed;
+#hero .bg-video {
+    position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    z-index: -1;
+    z-index: -1; /* lakukan background */
 }
+
 
     </style>
 </head>
@@ -402,7 +351,7 @@
 
     <!-- =================== HALAMAN UTAMA =================== -->
     <section id="hero" class="min-vh-100 w-100 d-flex flex-column align-items-center 
-        text-center text-dark justify-content-center px-3 position-relative fade-in">
+        text-center text-dark justify-content-center px-3 position-relative">
     
         <video class="bg-video" autoplay loop muted playsinline>
             <source src="/images/vid3.mp4" type="video/mp4">
@@ -417,7 +366,7 @@
         </div>
     
         <!-- Nama -->
-        <div class="name-box mt-4 text-black fw-bold display-5">
+        <div class="mt-4 text-black fw-bold display-5">
             <div id="name1" class="name-line"></div>
             <div id="name2" class="name-line"></div>
             <div id="name3" class="name-line"></div>
@@ -465,9 +414,9 @@
                     </div>
                 </div>
                 
-                <h2 style="font-size: 1.5rem; font-weight: bold; margin: 0; color: #000; text-shadow: 0 1px 6px rgba(0,0,0,0.7);">
+                <h3 style="font-size: 30px; font-weight: bold; margin: 20px; color: #000;">
                     &
-                </h2>
+                </h3>
                 <!-- Mempelai Wanita -->
                 <div class="col-12 col-md-6 d-flex flex-column align-items-center">
                     <div class="card position-relative w-100 mb-3"
@@ -763,4 +712,3 @@
 </body>
 
 </html>
-
