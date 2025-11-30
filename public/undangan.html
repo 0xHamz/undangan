@@ -28,10 +28,16 @@
             /* fade halus antar gambar */
             background: url('/images/bg-2.jpg') center center / cover no-repeat fixed;
         }
+        @font-face {
+            font-family: 'GethukJawa';
+            src: url('/fonts/GethukJawa.otf') format('truetype');
+            font-display: swap;
+        }
+
 
         /* Background Parallax */
         .hero-section {
-            background: url('/images/bungafull.png') center/cover no-repeat fixed;
+            background: url('/images/download-Photoroom.png') center/cover no-repeat fixed;
         }
 
         /* Typography */
@@ -182,7 +188,7 @@
         }
 
         /* Judul & font */
-        h2 {
+        h2, .display-5 {
             font-family: 'Great Vibes', cursive;
             letter-spacing: 1px;
         }
@@ -226,7 +232,7 @@
 
         /* Judul turun sedikit */
         .gallery-title {
-            padding-top: 120px;
+            padding-top: 150px;
             /* lebih rapi daripada margin besar */
         }
 
@@ -244,27 +250,34 @@
         }
 
         .doa-section {
-            background: url('/images/bg-66.png') center/cover no-repeat;
-            padding: 100px 0;
-            /* jarak atas–bawah */
-            color: #000;
-            /* bisa diubah jadi putih kalau mau */
+            background-image: url('/images/bg-133.png');
+            background-position: top center;
+            background-size: cover;
+            background-repeat: no-repeat;
+
+            padding: 0;      /* jarak dalam */
+            min-height: 200px;       /* supaya background pasti terlihat */
+            color: #000;             /* teks hitam */
         }
+        .doa2-section {
+            background-image: url('/images/bg-q.png');
+            background-position: top center;
+            background-size: 80%;
+            background-repeat: no-repeat;
+
+            padding: 150px;      /* jarak dalam */
+            min-height: 500px;       /* supaya background pasti terlihat */
+            color: #000;             /* teks hitam */
+        }
+
 
         /* Background RSVP */
         .section-bg.rsvp {
             background: url('/images/bg-14.png') center/cover no-repeat;
-            padding: 120px 0;
+            padding: 200px 0;
             /* lebih proporsional */
         }
 
-        /* Grid gallery tetap 2 kolom di tablet/desktop */
-        @media (min-width: 640px) {
-            .gallery-section .grid {
-                grid-template-columns: repeat(2, 1fr);
-                padding: 0 20px;
-            }
-        }
 
         #countdown {
             color: white;
@@ -295,6 +308,54 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
             font-size: 20px;
         }
+        .hero-box {
+    background: linear-gradient(
+        to bottom,
+        rgba(30, 30, 30, 0.6),
+        rgba(30, 30, 30, 0.4)
+    ); /* gradient tetap warna asli */
+    
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 2px solid rgba(255, 255, 255, 0.3); /* border putih halus */
+    border-radius: 10px;
+
+    padding: 30px;
+    transform: translateY(-30px);
+
+    width: 90%;
+    max-width: 350px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+
+.name-box {
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    padding: 15px 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(4px);
+}
+
+.name-box .name-line {
+    font-size: 2.2rem;
+    font-weight: bold;
+    line-height: 1.1;
+    white-space: nowrap;
+}
+
+.bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
+
     </style>
 </head>
 
@@ -304,55 +365,41 @@
     </button>
 
     <!-- =================== HALAMAN UTAMA =================== -->
-    <section class="hero-section min-vh-100 w-100 d-flex flex-column align-items-center 
+    <section id="hero" class="min-vh-100 w-100 d-flex flex-column align-items-center 
         text-center text-dark justify-content-center px-3 position-relative fade-in">
-
-        <!-- Musik -->
-        <audio id="bgm" loop>
-            <source src="/music/wedding.mp3" type="audio/mpeg">
-        </audio>
-
-
-        <h2 class="display-5 mb-3">Wedding Of</h2>
-
+    
+        <video class="bg-video" autoplay loop muted playsinline>
+            <source src="/images/vid3.mp4" type="video/mp4">
+        </video>
+    
+        <!-- Teks Wedding Of -->
+        <h2 id="typewriter" class="display-5 mb-4 text-black fw-bold"></h2>
+    
+        <!-- Foto Profil -->
         <div class="rounded-circle overflow-hidden shadow border border-white" style="width: 160px; height: 160px;">
             <img src="/images/bg-profil.jpg" class="w-100 h-100 object-fit-cover">
         </div>
+    
+        <!-- Nama -->
+        <div class="name-box mt-4 text-black fw-bold display-5">
+            <div id="name1" class="name-line"></div>
+            <div id="name2" class="name-line"></div>
+            <div id="name3" class="name-line"></div>
+        </div>
 
-        <h1 class="mt-4 fw-bold lh-1 text-white" style="font-size: 2.7rem;">
-            HAMZAH & NAILA
-        </h1>
-
-        <!-- Tombol Scroll Down -->
+        <!-- Scroll Down -->
         <div class="scroll-down position-absolute bottom-0 mb-4">
             <span class="scroll-text">Scroll</span>
             <div class="scroll-icon"></div>
         </div>
-
-        <!-- Gelombang bergerak di bawah -->
-        <div class="wave-bottom">
-            <!-- Gelombang dasar (tebal) -->
-            <svg viewBox="0 0 1440 120" class="w-full wave wave1" preserveAspectRatio="none">
-                <path d="M0,40 C360,160 1080,-40 1440,60 L1440,120 L0,120 Z" fill="#f4f4f4"></path>
-            </svg>
-            <!-- Gelombang tipis 1 (agak atas, lebih melengkung) -->
-            <svg viewBox="0 0 1440 120" class="w-full wave wave2" preserveAspectRatio="none">
-                <path d="M0,50 C360,140 1080,0 1440,70 L1440,120 L0,120 Z" fill="#f4f4f4" opacity="0.7"></path>
-            </svg>
-            <!-- Gelombang tipis 2 (lebih tipis & lebih atas, melengkung) -->
-            <svg viewBox="0 0 1440 120" class="w-full wave wave3" preserveAspectRatio="none">
-                <path d="M0,60 C360,120 1080,-10 1440,80 L1440,120 L0,120 Z" fill="#f4f4f4" opacity="0.5"></path>
-            </svg>
-        </div>
-
-
-
+    
     </section>
+
 
     <!-- =================== HALAMAN PROFIL MEMPELAI =================== -->
     <section class="py-5 text-center" style="background: #f4f4f4;">
         <div class="container">
-            <h2 class="mb-5 text-black" style="text-shadow: 0 2px 6px rgba(0,0,0,0.7); font-size: 2rem;">
+            <h2 class="display-5 mb-4 text-black fw-bold" style="text-shadow: 0 2px 6px rgba(0,0,0,0.7); font-size: 2rem;">
                 Profil Mempelai
             </h2>
     
@@ -403,7 +450,7 @@
                     <div class="text-center">
                         <h2
                             style="font-size: 1.5rem; font-weight: bold; margin: 0; color: #000; text-shadow: 0 2px 6px rgba(0,0,0,0.7);">
-                            Naila Farah, S.Eng
+                            Naila Farah, S.Pd
                         </h2>
                         <p
                             style="font-size: 0.95rem; margin: 0.25rem 0 0; color: #000; text-shadow: 0 1px 4px rgba(0,0,0,0.6);">
@@ -416,16 +463,15 @@
     </section>
 
 
-
-
     <!-- =================== SECTION 3: SAVE THE DATE =================== -->
     <section class="text-center d-flex flex-column justify-content-center align-items-center py-5"
         style="background: url('/images/bg-144.png') center/cover no-repeat; background-size: cover; height: 500px; color: black;">
 
-        <h2 class="display-5 mb-3 text-shadow">Save The Date</h2>
+        <h2 class="display-5 mb-4 text-black fw-bold" style="text-shadow: 0 2px 6px rgba(0,0,0,0.7); font-size: 2rem;">Save The Date</h2>
         <p class="lead mb-1">Jum'at, 10 April 2026</p>
         <p class="lead mb-1">Pukul 07:00 WIB</p>
-        <p class="lead">Gedung Graha Wedding — Jakarta</p>
+        <p class="lead">Japura Kidul, Kec. Astanajapura</p>
+        <p class="lead">Kabupaten Cirebon, Jawa Barat</p>
 
         <!-- Countdown -->
         <div id="countdown" class="h2 fw-bold mt-4"></div>
@@ -448,7 +494,7 @@
                     Lokasi Acara
                 </h2>
                 <p class="mb-0 text-light" style="font-size: 0.95rem; text-shadow: 0 1px 4px rgba(0,0,0,0.5);">
-                    Gedung Graha Wedding, Jakarta Selatan
+                    Japura Kidul, Kec. Astanajapura, Kabupaten Cirebon, Jawa Barat
                 </p>
             </div>
 
@@ -467,8 +513,7 @@
     <!-- =================== SECTION 5: GALLERY FOTO =================== -->
     <section class="gallery-section text-center">
 
-        <h2 class="gallery-title mb-5 fs-1 text-black">Gallery</h2>
-
+        <h2 class="fw-bold display-6 gallery-title mb-5 fs-1 text-black" style="text-shadow: 0 2px 6px rgba(0,0,0,0.7); font-size: 2rem;">Gallery</h2>
         <div class="container">
             <div class="row g-3 justify-content-center">
 
@@ -504,44 +549,98 @@
 
     <!-- =================== SECTION 6: DOA & HARAPAN =================== -->
     <section class="doa-section text-center">
-
         <div class="container">
+        </div>
+    </section>
 
-            <h2 class="fw-bold mb-4 display-6">Doa & Harapan</h2>
-
-            <p class="mx-auto mb-0" style="max-width: 700px; line-height: 1.8;">
+    <section class="doa2-section text-center">
+        <div class="container">
+            <h2 class="fw-bold display-6">Doa & Harapan</h2>
+    
+            <p class="mt-2" style="max-width: 700px; line-height: 1.8;">
                 “Semoga Allah SWT memberikan keberkahan, kebahagiaan, dan
                 sakinah mawaddah warahmah kepada kedua mempelai hingga akhir hayat.”
             </p>
-
         </div>
-
     </section>
-
 
 
     <!-- =================== SECTION 7: RSVP =================== -->
     <section class="section-bg rsvp text-center">
-
-        <h2 class="text-4xl mb-6">RSVP</h2>
-
-        <form class="max-w-xl mx-auto grid grid-cols-1 gap-4">
-
-            <input type="text" placeholder="Nama Anda" class="p-3 rounded-lg border border-gray-300">
-
-            <input type="text" placeholder="Jumlah Kehadiran" class="p-3 rounded-lg border border-gray-300">
-
-            <textarea placeholder="Ucapan & Doa" class="p-3 rounded-lg border border-gray-300 h-24"></textarea>
-
-            <button class="bg-rose-700 text-white py-3 rounded-lg shadow-lg">
+        <h2 class="fw-bold display-6">RSVP</h2>
+    
+        <form id="rsvpForm" class="max-w-xl mx-auto grid grid-cols-1 gap-4">
+    
+            <input id="nama" type="text" placeholder="Nama Anda" class="p-3 rounded-lg border border-gray-300">
+    
+            <input id="jumlah" type="number" placeholder="Jumlah Kehadiran" class="p-3 rounded-lg border border-gray-300">
+    
+            <textarea id="ucapan" placeholder="Ucapan & Doa" class="p-3 rounded-lg border border-gray-300 h-24"></textarea>
+    
+            <button type="submit" class="bg-rose-700 text-white py-3 rounded-lg shadow-lg">
                 Kirim RSVP
             </button>
         </form>
-
+    
+        <!-- Tempat menampilkan data RSVP -->
+        <div id="rsvpList" class="max-w-xl mx-auto mt-6"></div>
     </section>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
+    <script>
+        const supabaseUrl = "https://twumznwbegoeqcplklnm.supabase.co";
+        const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR3dW16bndiZWdvZXFjcGxrbG5tIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQwNjU0MDAsImV4cCI6MjA3OTY0MTQwMH0.KpLgwbmBPVRE2ZImLdJP3tF_GwPUqU1XQ6dZERcGKYI";
+        const client = supabase.createClient(supabaseUrl, supabaseKey);
 
+        const form = document.getElementById("rsvpForm");
+        const list = document.getElementById("rsvpList");
 
+        // --- 1. Ambil data saat halaman dibuka ---
+        async function loadRSVP() {
+            const { data, error } = await client
+                .from("rsvp")
+                .select("*")
+                .order("created_at", { ascending: false });
 
+            if (error) {
+                list.innerHTML = "<p>Gagal memuat data.</p>";
+                return;
+            }
+
+            list.innerHTML = data.map(item => `
+                <div class="p-4 text-left bg-white shadow rounded-lg mb-3 border border-gray-200">
+                    <p class="font-semibold text-lg">${item.nama}</p>
+                    <p class="text-sm">Jumlah Kehadiran: <strong>${item.jumlah}</strong></p>
+                    <p class="mt-2 italic">“${item.ucapan}”</p>
+                </div>
+            `).join("");
+        }
+
+        loadRSVP();
+
+        // --- 2. Kirim data ke Supabase ---
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const nama = document.getElementById("nama").value;
+            const jumlah = document.getElementById("jumlah").value;
+            const ucapan = document.getElementById("ucapan").value;
+
+            const { error } = await client.from("rsvp").insert({
+                nama,
+                jumlah,
+                ucapan
+            });
+
+            if (!error) {
+                form.reset();
+                loadRSVP(); // refresh daftar
+            } else {
+                alert("Gagal mengirim RSVP!");
+            }
+        });
+    </script>
 
     <script>
         const bgm = document.getElementById("bgm");
@@ -602,7 +701,31 @@
             }
         }, 1000);
     </script>
+    <script>
+        function typeWriter(elementId, text, speed = 150, callback = null) {
+            let i = 0;
+            function typing() {
+                if (i < text.length) {
+                    document.getElementById(elementId).innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(typing, speed);
+                } else if (callback) {
+                    setTimeout(callback, 300);
+                }
+            }
+            typing();
+        }
 
+        window.onload = function () {
+            typeWriter("typewriter", "Wedding Of", 150, () => {
+                typeWriter("name1", "Hamzah", 150, () => {
+                    typeWriter("name2", "&", 150, () => {
+                        typeWriter("name3", "Naila", 150);
+                    });
+                });
+            });
+        };
+    </script>
 
 </body>
 
