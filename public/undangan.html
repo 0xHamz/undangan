@@ -28,6 +28,7 @@
             /* fade halus antar gambar */
             background: url('/images/bg-2.jpg') center center / cover no-repeat fixed;
         }
+
         @font-face {
             font-family: 'GethukJawa';
             src: url('/fonts/GethukJawa.otf') format('truetype');
@@ -167,7 +168,8 @@
         }
 
         /* Judul & font */
-        h2, .display-5 {
+        h2,
+        .display-5 {
             font-family: 'Great Vibes', cursive;
             letter-spacing: 1px;
         }
@@ -234,20 +236,28 @@
             background-size: cover;
             background-repeat: no-repeat;
 
-            padding: 0;      /* jarak dalam */
-            min-height: 200px;       /* supaya background pasti terlihat */
-            color: #000;             /* teks hitam */
+            padding: 0;
+            /* jarak dalam */
+            min-height: 200px;
+            /* supaya background pasti terlihat */
+            color: #000;
+            /* teks hitam */
         }
+
         .doa2-section {
             background-image: url('/images/bg-q.png');
             background-position: top center;
             background-size: 80%;
             background-repeat: no-repeat;
 
-            padding: 150px;      /* jarak dalam */
-            min-height: 500px;       /* supaya background pasti terlihat */
-            color: #000;             /* teks hitam */
+            padding: 150px;
+            /* jarak dalam */
+            min-height: 500px;
+            /* supaya background pasti terlihat */
+            color: #000;
+            /* teks hitam */
         }
+
         /* --- Versi Smartphone Kecil (≤480px) --- */
         @media (max-width: 480px) {
             .doa2-section {
@@ -268,16 +278,21 @@
         /* --- Versi Mobile --- */
         @media (max-width: 768px) {
             .doa2-section {
-                padding: 110px 20px;       /* jauh lebih rapat */
-                background-size: 90% 90%;    /* perbesar sedikit biar tidak kosong */
-                min-height: 260px;        /* supaya tetap proporsional */
+                padding: 110px 20px;
+                /* jauh lebih rapat */
+                background-size: 90% 100%;
+                /* perbesar sedikit biar tidak kosong */
+                min-height: 280px;
+                /* supaya tetap proporsional */
             }
 
             .doa2-section p {
                 font-size: 12px;
                 line-height: 1.7;
-                padding-right: 20px;    /* biar teks tidak terlalu mepet */
-                padding-left: 20px;    /* biar teks tidak terlalu mepet */
+                padding-right: 20px;
+                /* biar teks tidak terlalu mepet */
+                padding-left: 20px;
+                /* biar teks tidak terlalu mepet */
             }
 
             .doa2-section h2 {
@@ -325,22 +340,22 @@
         }
 
 
-#hero {
-    position: relative;
-    overflow: hidden; /* biar video tidak keluar */
-}
+        #hero {
+            position: relative;
+            overflow: hidden;
+            /* biar video tidak keluar */
+        }
 
-#hero .bg-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1; /* lakukan background */
-}
-
-
+        #hero .bg-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            /* lakukan background */
+        }
     </style>
 </head>
 
@@ -352,19 +367,19 @@
     <!-- =================== HALAMAN UTAMA =================== -->
     <section id="hero" class="min-vh-100 w-100 d-flex flex-column align-items-center 
         text-center text-dark justify-content-center px-3 position-relative">
-    
+
         <video class="bg-video" autoplay loop muted playsinline>
             <source src="/images/vid3.mp4" type="video/mp4">
         </video>
-    
+
         <!-- Teks Wedding Of -->
         <h2 id="typewriter" class="display-5 mb-4 text-black fw-bold"></h2>
-    
+
         <!-- Foto Profil -->
         <div class="rounded-circle overflow-hidden shadow border border-white" style="width: 160px; height: 160px;">
             <img src="/images/bg-profil.jpg" class="w-100 h-100 object-fit-cover">
         </div>
-    
+
         <!-- Nama -->
         <div class="mt-4 text-black fw-bold display-5">
             <div id="name1" class="name-line"></div>
@@ -377,17 +392,18 @@
             <span class="scroll-text">Scroll</span>
             <div class="scroll-icon"></div>
         </div>
-    
+
     </section>
 
 
     <!-- =================== HALAMAN PROFIL MEMPELAI =================== -->
     <section class="py-5 text-center" style="background: #f4f4f4;">
         <div class="container">
-            <h2 class="display-5 mb-4 text-black fw-bold" style="text-shadow: 0 2px 6px rgba(0,0,0,0.7); font-size: 2rem;">
+            <h2 class="display-5 mb-4 text-black fw-bold"
+                style="text-shadow: 0 2px 6px rgba(0,0,0,0.7); font-size: 2rem;">
                 Profil Mempelai
             </h2>
-    
+
             <div class="row justify-content-center g-4">
                 <!-- Mempelai Pria -->
                 <div class="col-12 col-md-6 d-flex flex-column align-items-center">
@@ -397,8 +413,10 @@
                         <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 120px;
                                     background: url('/images/bg-666.png') center bottom / contain no-repeat;">
                         </div>
-                        <div style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; padding: 0 10px;">
-                            <h2 style="color: #000; text-shadow: 0 2px 6px rgba(0,0,0,0.7); font-size: 1.5rem; margin: 0;">
+                        <div
+                            style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; padding: 0 10px;">
+                            <h2
+                                style="color: #000; text-shadow: 0 2px 6px rgba(0,0,0,0.7); font-size: 1.5rem; margin: 0;">
                                 Hamzah
                             </h2>
                         </div>
@@ -408,12 +426,13 @@
                             style="font-size: 1.5rem; font-weight: bold; margin: 0; color: #000; text-shadow: 0 1px 6px rgba(0,0,0,0.7);">
                             Hamzah Akbar Pratama, S.Kom
                         </h2>
-                        <p style="font-size: 0.95rem; margin: 0.25rem 0 0; color: #000; text-shadow: 0 1px 4px rgba(0,0,0,0.6);">
+                        <p
+                            style="font-size: 0.95rem; margin: 0.25rem 0 0; color: #000; text-shadow: 0 1px 4px rgba(0,0,0,0.6);">
                             Putra dari Bapak Dwi Suseno & Ibu Sukasmi
                         </p>
                     </div>
                 </div>
-                
+
                 <h3 style="font-size: 30px; font-weight: bold; margin: 20px; color: #000;">
                     &
                 </h3>
@@ -421,12 +440,15 @@
                 <div class="col-12 col-md-6 d-flex flex-column align-items-center">
                     <div class="card position-relative w-100 mb-3"
                         style="max-width: 300px; height: 300px; border-radius: 1rem; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.3);">
-                        <img src="/images/wanita.jpg" class="card-img" style="object-fit: cover; width: 100%; height: 100%;">
+                        <img src="/images/wanita.jpg" class="card-img"
+                            style="object-fit: cover; width: 100%; height: 100%;">
                         <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 120px;
                                     background: url('/images/bg-666.png') center bottom / contain no-repeat;">
                         </div>
-                        <div style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; padding: 0 10px;">
-                            <h2 style="color: #000; text-shadow: 0 2px 6px rgba(0,0,0,0.7); font-size: 1.5rem; margin: 0;">
+                        <div
+                            style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; padding: 0 10px;">
+                            <h2
+                                style="color: #000; text-shadow: 0 2px 6px rgba(0,0,0,0.7); font-size: 1.5rem; margin: 0;">
                                 Naila
                             </h2>
                         </div>
@@ -436,12 +458,13 @@
                             style="font-size: 1.5rem; font-weight: bold; margin: 0; color: #000; text-shadow: 0 2px 6px rgba(0,0,0,0.7);">
                             Naila Farah, S.Pd
                         </h2>
-                        <p style="font-size: 0.95rem; margin: 0.25rem 0 0; color: #000; text-shadow: 0 1px 4px rgba(0,0,0,0.6);">
+                        <p
+                            style="font-size: 0.95rem; margin: 0.25rem 0 0; color: #000; text-shadow: 0 1px 4px rgba(0,0,0,0.6);">
                             Putri dari Bapak Asan Nuryanto & Ibu Rukoyah
                         </p>
                     </div>
                 </div>
-        </div>
+            </div>
     </section>
 
 
@@ -449,7 +472,8 @@
     <section class="text-center d-flex flex-column justify-content-center align-items-center py-5"
         style="background: url('/images/bg-144.png') center/cover no-repeat; background-size: cover; height: 500px; color: black;">
 
-        <h2 class="display-5 mb-4 text-black fw-bold" style="text-shadow: 0 2px 6px rgba(0,0,0,0.7); font-size: 2rem;">Save The Date</h2>
+        <h2 class="display-5 mb-4 text-black fw-bold" style="text-shadow: 0 2px 6px rgba(0,0,0,0.7); font-size: 2rem;">
+            Save The Date</h2>
         <p class=" mb-1">Jum'at, 10 April 2026</p>
         <p class=" mb-1">Pukul 07:00 WIB</p>
         <p>Japura Kidul, Kec. Astanajapura</p>
@@ -495,7 +519,8 @@
     <!-- =================== SECTION 5: GALLERY FOTO =================== -->
     <section class="gallery-section text-center">
 
-        <h2 class="fw-bold display-6 gallery-title mb-5 fs-1 text-black" style="text-shadow: 0 2px 6px rgba(0,0,0,0.7); font-size: 2rem;">Gallery</h2>
+        <h2 class="fw-bold display-6 gallery-title mb-5 fs-1 text-black"
+            style="text-shadow: 0 2px 6px rgba(0,0,0,0.7); font-size: 2rem;">Gallery</h2>
         <div class="container">
             <div class="row g-3 justify-content-center">
 
@@ -538,7 +563,7 @@
     <section class="doa2-section text-center">
         <div class="container">
             <h2 class="fw-bold display-6">Doa & Harapan</h2>
-    
+
             <p class="m-3" style="max-width: 700px; line-height: 1.8;">
                 “Semoga Allah SWT memberikan keberkahan, kebahagiaan, dan
                 sakinah mawaddah warahmah kepada kedua mempelai hingga akhir hayat.”
@@ -550,32 +575,33 @@
     <!-- =================== SECTION 7: RSVP =================== -->
     <section class="section-bg rsvp text-center px-4 py-10">
         <h2 class="fw-bold display-6 mb-4">RSVP</h2>
-    
+
         <div class="max-w-xl mx-auto bg-white/70 backdrop-blur-md shadow-xl rounded-2xl p-6">
             <form id="rsvpForm" class="grid grid-cols-1 gap-4">
-    
-                <input id="nama" type="text" placeholder="Nama Anda" class="p-3 rounded-lg border border-gray-300 w-full">
-    
+
+                <input id="nama" type="text" placeholder="Nama Anda"
+                    class="p-3 rounded-lg border border-gray-300 w-full">
+
                 <input id="jumlah" type="number" placeholder="Jumlah Kehadiran"
                     class="p-3 rounded-lg border border-gray-300 w-full">
-    
+
                 <textarea id="ucapan" placeholder="Ucapan & Doa"
                     class="p-3 rounded-lg border border-gray-300 h-24 w-full"></textarea>
-    
+
                 <button type="submit"
                     class="bg-rose-700 hover:bg-rose-800 transition text-white py-3 rounded-lg shadow-lg w-full font-semibold">
                     Kirim RSVP
                 </button>
             </form>
         </div>
-    
+
         <div id="rsvpList" class="max-w-xl mx-auto mt-6 px-4"></div>
     </section>
 
 
-    
+
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    
+
     <script>
         const supabaseUrl = "https://twumznwbegoeqcplklnm.supabase.co";
         const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR3dW16bndiZWdvZXFjcGxrbG5tIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQwNjU0MDAsImV4cCI6MjA3OTY0MTQwMH0.KpLgwbmBPVRE2ZImLdJP3tF_GwPUqU1XQ6dZERcGKYI";
@@ -718,4 +744,3 @@
 </body>
 
 </html>
-
